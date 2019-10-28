@@ -4,17 +4,25 @@ import SearchBar from '../components/SearchBar';
 import obdb from '../api/obdb';
 
 const SearchScreen = () => {
-	const [term, setTerm] = useState('');
-	return (
-		<View>
-			<SearchBar
-				term={term}
-				onTermChange={newTerm => setTerm(newTerm)}
-				onTermSubmit={() => console.log('submitted')}
-			/>
-			<Text>Search Screen</Text>
-		</View>
-	);
+  const [term, setTerm] = useState('');
+  const [results, setResults] = useState([]);
+
+  const searchApi = async () => {
+    const response = await obdb.get('/search', {
+      params: {
+        name: term,
+      },
+    });
+    setResults(response.data);
+  };
+
+  return (
+    <View>
+      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi} />
+      <Text>Search Screen</Text>
+      <Text>{results}</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({});
