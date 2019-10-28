@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: 'eslint:universe/native',
+  extends: 'universe',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
