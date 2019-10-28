@@ -1,9 +1,20 @@
 module.exports = {
-  root: true,
-  extends: ['universe/native', 'universe/node', 'universe/web'],
-  settings: {
-    react: {
-      version: '16',
-    },
+  env: {
+    browser: true,
+    es6: true,
   },
-};
+  extends: 'eslint:universe/native',
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['react'],
+  rules: {},
+}
