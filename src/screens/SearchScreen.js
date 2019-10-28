@@ -13,7 +13,6 @@ const SearchScreen = () => {
 				onTermSubmit={() => console.log('submitted')}
 			/>
 			<Text>Search Screen</Text>
-			<Text>{term}</Text>
 		</View>
 	);
 };
