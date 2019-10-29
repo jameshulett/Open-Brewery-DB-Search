@@ -14,13 +14,15 @@ const SearchScreen = () => {
       },
     });
     setResults(response.data);
+    console.log('response is: ', response);
+    console.log('data is: ', response.data);
   };
 
   return (
     <View>
-      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi} />
+      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={searchApi} />
       <Text>Search Screen</Text>
-      <Text>{results}</Text>
+      <Text>{results.length}</Text>
     </View>
   );
 };
