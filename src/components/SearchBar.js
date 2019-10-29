@@ -1,6 +1,6 @@
-import React from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
-import { Feather } from '@expo/vector-icons'
+import React from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   backgroundStyle: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginHorizontal: 15,
   },
-})
+});
 
 const SearchBar = ({ term, onTermChange, onTermSubmit }) => (
   <View style={styles.backgroundStyle}>
@@ -35,6 +35,6 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => (
       onEndEditing={onTermSubmit}
     />
   </View>
-)
+);
 
-export default SearchBar
+export default SearchBar;
