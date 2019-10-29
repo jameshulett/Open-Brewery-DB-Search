@@ -10,7 +10,7 @@ const SearchScreen = () => {
   const searchApi = async () => {
     const response = await obdb.get('/search', {
       params: {
-        name: term,
+        query: term,
       },
     });
     setResults(response.data);
